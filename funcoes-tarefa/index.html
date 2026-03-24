@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabuada</title>
+  <style>
+    /* Reset simples */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #121212; /* escuro uniforme */
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #1e1e1e; /* tom escuro uniforme */
+      padding: 30px;
+      border-radius: 12px;
+      width: 320px; /* largura fixa para simetria */
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #333;
+      border-radius: 8px;
+      background-color: #2a2a2a;
+      color: #ffffff;
+      font-size: 16px;
+      outline: none;
+      text-align: center; /* centraliza o número digitado */
+    }
+
+    input:focus {
+      border-color: #4a90e2; /* destaque azul ao focar */
+      box-shadow: 0 0 0 2px rgba(74,144,226,0.3);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background-color: #4a90e2; /* azul uniforme */
+      color: #ffffff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background-color: #357abd; /* azul hover */
+    }
+
+    #resultado {
+      margin-top: 25px;
+      width: 100%;
+      text-align: center; /* centralizado para simetria */
+      white-space: pre-line;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Tabuada</h1>
+
+    <input type="number" id="numero" placeholder="Digite um número">
+
+    <button onclick="calcular()">Calcular</button>
+
+    <div id="resultado"></div>
+  </div>
+
+  <script>
+    function calcular() {
+      var numero = document.getElementById("numero").value;
+      var contador = 0;
+      var resultado = "";
+
+      while (contador <= 10) {
+        resultado += numero + " x " + contador + " = " + (numero * contador) + "\n";
+        contador++;
+      }
+
+      document.getElementById("resultado").textContent = resultado;
+    }
+  </script>
+
+</body>
+</html>
